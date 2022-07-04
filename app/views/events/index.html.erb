@@ -1,0 +1,7 @@
+<% @events.each do |event| %>
+  <%= event.user.first_name %>
+  <%= event.date %>
+  <%= event.nb_places %>
+  <%= event.level %>
+  <%= event.field.address %>
+<% end %>
