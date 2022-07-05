@@ -1,0 +1,33 @@
+<div class="container container-event-form">
+  <%= simple_form_for(@event) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.input :title,
+                  required: true,
+                  placeholder: "Titre"%>
+      <%= f.input :nb_places,
+                  required: true,
+                  placeholder: "Nombre de places"%>
+      <%= f.input :level,
+                  collection: [1, 2, 3, 4, 5],
+                  required: true,
+                  placeholder: "Niveau"%>
+      <%= f.input :date,
+                  required: true,
+                  placeholder: "date"%>
+      <%= f.association :field,
+                        label_method: :name,
+                        value_method: :id,
+                        include_blank: false,
+                        prompt: "Choisissez votre five"
+      %>
+      <%= f.input :photo,
+                  required: true,
+                  label: "Ajoutez une photo"%>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, class: "green-btn" %>
+    </div>
+  <% end %>
+</div>
