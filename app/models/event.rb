@@ -11,4 +11,8 @@ class Event < ApplicationRecord
     reservations = Reservation.where(event: self)
     reservations.length
   end
+
+  def participants
+    re
+  end
 end

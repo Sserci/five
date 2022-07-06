@@ -7,7 +7,8 @@
   <div class="event-name-container lg:grid grid-cols-3 grid-rows-3 mb-20">
     <div class="col-start-1 col-end-3 flex items-center justify-between border-bottom border-gray-200 mx-10 pb-3">
       <p class="text-3xl"><%= @event.field.name %></p>
-      <div class="rounded-full bg-blue-500 w-14 h-14"></div>
+      <%= cl_image_tag @event.user.photo.key, height: 60, width: 60, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
     </div>
     <div class="location-field col-start-1 col-end-3 mx-10 mt-4 border-bottom border-gray-200">
       <p class=""><%= @event.field.address %></p>
