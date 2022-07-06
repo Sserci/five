@@ -22,7 +22,7 @@
                 <h2><%= event.title %></h2>
                 <p><%= event.field.name %></p>
                     </div>
-              <h2 class="card-trip-pricing">Places restantes: <%= event.nb_places %></h2>
+              <h2 class="card-trip-pricing">Places restantes: <%= event.nb_places - event.remaining_places%></h2>
             </div>
           </div>
       <% end %>

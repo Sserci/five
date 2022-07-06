@@ -1,0 +1,45 @@
+<div class="container bg-white">
+  <p class="text-5xl mt-5">Votre réservation est confirmée</p>
+  <div class="w-full h-80 bg-no-repeat bg-center bg-cover mb-10"
+       style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @reservation.event.photo.key %>')"
+  >
+  </div>
+  <div class="lg:flex lg:min-h-fit">
+    <div class="lg:w-4/6">
+      <div class="col-start-1 col-end-3 flex items-center justify-between border-bottom border-gray-200 mx-10 pb-3">
+        <p class="text-3xl"><%= @reservation.event.field.name %></p>
+        <div class="rounded-full bg-blue-500 w-14 h-14"></div>
+      </div>
+      <div class="location-field col-start-1 col-end-3 mx-10 mt-4 border-bottom border-gray-200">
+        <p class=""><%= @reservation.event.field.address %></p>
+        <p>Places restantes : <%= @reservation.event.nb_places - @reservation.event.remaining_places %></p>
+      </div>
+      <div class="participants-pictures col-start-1 col-end-3 mx-10 mt-4 border-bottom border-gray-200">
+        <p class="">Ils participent déjà</p>
+        <div class="pictures flex justify-around mb-3">
+          <div class="rounded-full bg-blue-500 w-14 h-14"></div>
+          <div class="rounded-full bg-blue-500 w-14 h-14"></div>
+          <div class="rounded-full bg-blue-500 w-14 h-14"></div>
+          <div class="rounded-full bg-blue-500 w-14 h-14"></div>
+          <div class="rounded-full bg-blue-500 w-14 h-14"></div>
+          <div class="rounded-full bg-blue-500 w-14 h-14"></div>
+          <div class="rounded-full bg-blue-500 w-14 h-14"></div>
+          <div class="rounded-full bg-blue-500 w-14 h-14"></div>
+          <div class="rounded-full bg-blue-500 w-14 h-14"></div>
+        </div>
+      </div>
+    </div>
+    <div class="lg:w-2/6 min-h-full m-auto">
+      <div class="row-start-1 row-end-4 col-start-3 text-center">
+        <p>Le <%= @reservation.event.date %></p>
+        <p>Niveau</p>
+        <div class="level-ball flex justify-center gap-3">
+          <% @reservation.event.level.times do%>
+            <i class="fa-regular fa-futbol"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+

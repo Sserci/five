@@ -11,7 +11,7 @@
     </div>
     <div class="location-field col-start-1 col-end-3 mx-10 mt-4 border-bottom border-gray-200">
       <p class=""><%= @event.field.address %></p>
-      <p>Places restantes : <%= @event.nb_places %></p>
+      <p>Places restantes : <%= @event.nb_places - @event.remaining_places %></p>
     </div>
     <div class="participants-pictures col-start-1 col-end-3 mx-10 mt-4 border-bottom border-gray-200">
       <p class="">Ils participent déjà</p>
