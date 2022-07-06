@@ -13,6 +13,8 @@ class ReservationsController < ApplicationController
 
   def show
     @reservation = Reservation.find(params[:id])
+    @reservations = Reservation.where(event_id: params[:event_id])
+
   end
 
   def destroy

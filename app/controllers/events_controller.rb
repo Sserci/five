@@ -11,6 +11,8 @@ class EventsController < ApplicationController
       lng: @event.field.longitude
     }
     @reservation = Reservation.new
+    @reservations = Reservation.where(event: @event)
+
   end
 
   def new
